@@ -1443,16 +1443,14 @@
   corner(StatusDot, 4)
   local StatusLbl = lbl(StatusCard, "S", "Initializing...", UDim2.new(1,-30,0,20), UDim2.fromOffset(26,4), 11, T.Dim)
   StatusLbl.ZIndex = 5
-  local CodeLbl = lbl(StatusCard, "C", "—", UDim2.new(1,-30,0,18), UDim2.fromOffset(26,26), 15, T.Accent,
-  Enum.Font.GothamBlack)
+  local CodeLbl = lbl(StatusCard, "C", "—", UDim2.new(1,-30,0,18), UDim2.fromOffset(26,26), 15, T.Accent, Enum.Font.GothamBlack)
   CodeLbl.ZIndex = 5
 
   -- Mode cycler
   local ModeCard = makeCard(Page1, 38, 1)
   lbl(ModeCard, "L", "Submit Mode", UDim2.fromOffset(120,38), UDim2.fromOffset(12,0), 11, T.Text)
   local modeNames = {"PASTE ONLY", "AUTO TYPE", "FULL AUTO"}
-  local ModeLbl = lbl(ModeCard, "M", modeNames[cfg.mode], UDim2.fromOffset(130,38), UDim2.new(1,-158,0,0), 11, T.Accent,
-  Enum.Font.GothamBold)
+  local ModeLbl = lbl(ModeCard, "M", modeNames[cfg.mode], UDim2.fromOffset(130,38), UDim2.new(1,-158,0,0), 11, T.Accent, Enum.Font.GothamBold)
   ModeLbl.TextXAlignment = Enum.TextXAlignment.Right
   local ModeBtn = Instance.new("TextButton")
   ModeBtn.Size = UDim2.fromOffset(130,38)
@@ -1472,8 +1470,7 @@
   local CaseCard = makeCard(Page1, 38, 2)
   lbl(CaseCard, "L", "Case Mode", UDim2.fromOffset(120,38), UDim2.fromOffset(12,0), 11, T.Text)
   local caseModes = {"EXACT","UPPER","lower"}
-  local CaseLbl = lbl(CaseCard, "M", cfg.caseMode, UDim2.fromOffset(100,38), UDim2.new(1,-118,0,0), 11, T.Cyan,
-  Enum.Font.GothamBold)
+  local CaseLbl = lbl(CaseCard, "M", cfg.caseMode, UDim2.fromOffset(100,38), UDim2.new(1,-118,0,0), 11, T.Cyan, Enum.Font.GothamBold)
   CaseLbl.TextXAlignment = Enum.TextXAlignment.Right
   local CaseBtn = Instance.new("TextButton")
   CaseBtn.Size = UDim2.fromOffset(100,38)
@@ -1549,8 +1546,7 @@
       return b
   end
   local BtnMinus = stepBtn(StepFrame, "-", UDim2.fromOffset(2,3))
-  local StepCount = lbl(StepFrame, "V", tostring(cfg.submitAfter), UDim2.fromOffset(38,24), UDim2.fromOffset(30,3), 16,
-  T.White, Enum.Font.GothamBlack)
+  local StepCount = lbl(StepFrame, "V", tostring(cfg.submitAfter), UDim2.fromOffset(38,24), UDim2.fromOffset(30,3), 16, T.White, Enum.Font.GothamBlack)
   StepCount.TextXAlignment = Enum.TextXAlignment.Center
   local BtnPlus = stepBtn(StepFrame, "+", UDim2.fromOffset(70,3))
   BtnMinus.Activated:Connect(function()
@@ -1599,8 +1595,7 @@
   local SpeedCard = makeCard(Page2, 38, 3)
   lbl(SpeedCard, "L", "Spam Speed", UDim2.fromOffset(120,38), UDim2.fromOffset(12,0), 11, T.Text)
   local speedNames = {"MAX","FAST","MED"}
-  local SpeedLbl = lbl(SpeedCard, "M", cfg.spamSpeed, UDim2.fromOffset(100,38), UDim2.new(1,-118,0,0), 11, T.Gold,
-  Enum.Font.GothamBold)
+  local SpeedLbl = lbl(SpeedCard, "M", cfg.spamSpeed, UDim2.fromOffset(100,38), UDim2.new(1,-118,0,0), 11, T.Gold, Enum.Font.GothamBold)
   SpeedLbl.TextXAlignment = Enum.TextXAlignment.Right
   local _speedIdx = 1
   for i, v in ipairs(speedNames) do if v == cfg.spamSpeed then _speedIdx = i end end
@@ -1809,10 +1804,9 @@
           corner(row, 5)
           stroke(row, entry.success and T.Green or T.Red, 1, 0.7)
           lbl(row, "T", entry.time, UDim2.fromOffset(56,26), UDim2.fromOffset(6,0), 9, T.Dim)
-          lbl(row, "C", entry.code, UDim2.new(1,-100,1,0), UDim2.fromOffset(64,0), 12, entry.success and T.Green or
+          lbl(row, "C", entry.code, UDim2.new(1,-100,1,0), UDim2.fromOffset(64,0), 12, entry.success and T.Green or T.Red, Enum.Font.GothamBold)
+          local sLbl = lbl(row, "S", entry.success and "[OK]" or "[X]", UDim2.fromOffset(30,26), UDim2.new(1,-32,0,0), 10, entry.success and T.Green or
   T.Red, Enum.Font.GothamBold)
-          local sLbl = lbl(row, "S", entry.success and "[OK]" or "[X]", UDim2.fromOffset(30,26), UDim2.new(1,-32,0,0),
-  10, entry.success and T.Green or T.Red, Enum.Font.GothamBold)
           sLbl.TextXAlignment = Enum.TextXAlignment.Center
       end
   end
@@ -1911,10 +1905,8 @@
 
   -- Info card
   local InfoCard = makeCard(Page4, 44, 7)
-  lbl(InfoCard, "N", "VISIBLE SNIPER v2", UDim2.new(1,0,0,24), UDim2.fromOffset(12,4), 13, T.Accent,
-  Enum.Font.GothamBlack)
-  lbl(InfoCard, "S", "by KING  //  VISIBLE.VS  //  SAB Code Sniper", UDim2.new(1,0,0,18), UDim2.fromOffset(12,26), 9,
-  T.Dim, Enum.Font.Gotham)
+  lbl(InfoCard, "N", "VISIBLE SNIPER v2", UDim2.new(1,0,0,24), UDim2.fromOffset(12,4), 13, T.Accent, Enum.Font.GothamBlack)
+  lbl(InfoCard, "S", "by KING  //  VISIBLE.VS  //  SAB Code Sniper", UDim2.new(1,0,0,18), UDim2.fromOffset(12,26), 9, T.Dim, Enum.Font.Gotham)
 
   -- ============================================================
   -- STATUS / FLASH
